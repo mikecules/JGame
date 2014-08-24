@@ -1,3 +1,4 @@
+// input class for the game
 package ca.darkfusion.firstGame.input;
 
 import java.awt.event.KeyEvent;
