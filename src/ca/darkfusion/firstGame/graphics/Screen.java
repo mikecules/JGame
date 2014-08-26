@@ -38,6 +38,8 @@ public class Screen {
 			}
 			
 			
+			int tileBitMask = Sprite.grass.SIZE - 1;
+			
 			for (int x = 0; x < width; x++) {
 				int xx = x + xOffset;
 				
@@ -45,10 +47,11 @@ public class Screen {
 					//break;
 				}
 				
-				int tileIndex = (xx >> 4 & TILE_SIZE_MASK) + (yy >> 4 & TILE_SIZE_MASK) * TILE_SIZE;
+				//int tileIndex = (xx >> 4 & TILE_SIZE_MASK) + (yy >> 4 & TILE_SIZE_MASK) * TILE_SIZE;
 				
 				int pixelIndex = x + (y * width);
-				pixels[pixelIndex] = tiles[tileIndex];
+				
+				pixels[pixelIndex] = Sprite.grass.pixels[(xx & tileBitMask) + (yy & tileBitMask)* Sprite.grass.SIZE];
 			}
 		}
 	}

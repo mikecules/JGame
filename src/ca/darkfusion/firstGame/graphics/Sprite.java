@@ -1,10 +1,11 @@
 package ca.darkfusion.firstGame.graphics;
 
 public class Sprite {
-	private final int SIZE;
+	public final int SIZE;
 	private int originX, originY;
 	public int[] pixels;
 	private SpriteSheet spriteSheet;
+	public static Sprite grass = new Sprite(16, 0, 0, SpriteSheet.tiles);
 	
 	public Sprite(int size, int x, int y, SpriteSheet spriteSheet) {
 		this.SIZE = size;
